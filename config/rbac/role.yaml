@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - crd.devops.tools
+  resources:
+  - chowkis
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - crd.devops.tools
+  resources:
+  - chowkis/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - crd.devops.tools
+  resources:
+  - chowkis/status
+  verbs:
+  - get
+  - patch
+  - update
