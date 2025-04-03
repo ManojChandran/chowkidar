@@ -24,6 +24,7 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
+	"sigs.k8s.io/controller-runtime/pkg/cache"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
@@ -33,6 +34,7 @@ import (
 // ChowkiReconciler reconciles a Chowki object
 type ChowkiReconciler struct {
 	client.Client
+	Cache  cache.Cache
 	Scheme *runtime.Scheme
 }
 
